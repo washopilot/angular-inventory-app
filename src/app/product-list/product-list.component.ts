@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Product } from '../product.model';
 
 @Component({
@@ -8,5 +8,16 @@ import { Product } from '../product.model';
 })
 export class ProductListComponent {
   @Input() productList: Product[] = [];
-  constructor() {}
+  @Output() onProductSelected: EventEmitter<Product>;
+
+  constructor() {
+    this.onProductSelected = new EventEmitter();
+    console.log('inicial del evento', this.onProductSelected);
+  }
+
+  clicked(product: Product) {
+    this.onProductSelected.emit(product);
+    console.log('click on ', product);
+    console.log('evento ', this.onProductSelected);
+  }
 }

@@ -1,1 +1,1 @@
-<p *ngFor="let product of productList">{{ product.name }}</p>
+<p *ngFor="let product of productList" (click)="clicked(product)">{{ product.name }}</p>

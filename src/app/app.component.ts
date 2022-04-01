@@ -35,6 +35,6 @@ export class AppComponent {
   }
 
   productWasSelected(product: Product): void {
-    console.log('Product clicked: ', product);
+    // console.log('Product clicked: ', product);
   }
 }
