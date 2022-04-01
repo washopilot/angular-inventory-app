@@ -1,1 +1,8 @@
-<p *ngFor="let product of productList" (click)="clicked(product)">{{ product.name }}</p>
+<div class="ui items">
+  <product-row
+    *ngFor="let myProduct of productList"
+    [product]="myProduct"
+    (click)="clicked(myProduct)"
+    [class.selected]="isSelected(myProduct)">
+  </product-row>
+</div>

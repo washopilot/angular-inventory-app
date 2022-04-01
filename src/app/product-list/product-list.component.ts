@@ -3,21 +3,26 @@ import { Product } from '../product.model';
 
 @Component({
   selector: 'product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  templateUrl: './product-list.component.html'
 })
 export class ProductListComponent {
   @Input() productList: Product[] = [];
   @Output() onProductSelected: EventEmitter<Product>;
+  private currentProduct!: Product;
 
   constructor() {
     this.onProductSelected = new EventEmitter();
-    console.log('inicial del evento', this.onProductSelected);
   }
 
-  clicked(product: Product) {
+  clicked(product: Product): void {
+    this.currentProduct = product;
     this.onProductSelected.emit(product);
-    console.log('click on ', product);
-    console.log('evento ', this.onProductSelected);
+  }
+
+  isSelected(product: Product): boolean {
+    if (!product || !this.currentProduct) {
+      return false;
+    }
+    return product.sku === this.currentProduct.sku;
   }
 }
