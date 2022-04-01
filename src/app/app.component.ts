@@ -11,30 +11,30 @@ export class AppComponent {
   constructor() {
     this.products = [
       new Product(
-        'NICEHAT',
-        'A Nice Black Hat',
-        '/assets/images/products/balck-hat.jpg',
-        ['Men', 'Accesories', 'Hats'],
-        29.99
+        'MYSHOES',
+        'Black Running Shoes',
+        '/assets/images/products/black-shoes.jpg',
+        ['Men', 'Shoes', 'Running Shoes'],
+        109.99
       ),
       new Product(
         'NEATOJACKET',
         'Blue Jacket',
         '/assets/images/products/blue-jacket.jpg',
-        ['Woman', 'Apparel', 'Jackets & Vest'],
+        ['Women', 'Apparel', 'Jackets & Vests'],
         238.99
       ),
       new Product(
-        'MYSHOES',
-        'Black Running Shoes',
-        '/assets/images/products/blue-shoes.jpg',
-        ['Men', 'Shoes', 'Running Shoes'],
-        109.99
+        'NICEHAT',
+        'A Nice Black Hat',
+        '/assets/images/products/black-hat.jpg',
+        ['Men', 'Accessories', 'Hats'],
+        29.99
       )
     ];
   }
 
   productWasSelected(product: Product): void {
-    // console.log('Product clicked: ', product);
+    console.log('Product clicked: ', product);
   }
 }
